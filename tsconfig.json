@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "jsx": "preserve",
+      "jsxFactory": "h",
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "module": "es2015",
+      "moduleResolution": "node",
+      "target": "es5"
+    },
+    "exclude": [
+        "node_modules",
+        "compile",
+    ]
+}
