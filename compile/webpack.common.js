@@ -44,7 +44,7 @@ module.exports = {
         extensions: ['.js', '.ts', '.tsx', '.vue', '.json'],
         alias: {
             '@': resolve('../src'),
-            vue$: 'vue/dist/vue.runtime.esm.js',
+            vue$: 'vue/dist/vue.esm.js',
         },
     },
     plugins: [
@@ -80,7 +80,6 @@ module.exports = {
         ],
     },
     optimization: {
-        minimize: false,
         minimize: env === 'production' ? true : false,
         splitChunks: {
             cacheGroups: {
