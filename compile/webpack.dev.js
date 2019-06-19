@@ -12,4 +12,12 @@ module.exports = merge(common, {
         hot: true,
         compress: true,
     },
+    module: {
+        rules: [{
+            test: /\.(js|vue|ts|tsx)$/,
+            loader: 'eslint-loader',
+            exclude: /node_modules/,
+            enforce: 'pre',
+        }],
+    },
 });

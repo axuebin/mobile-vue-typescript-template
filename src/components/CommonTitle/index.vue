@@ -9,7 +9,7 @@ import { Component, Prop } from 'vue-property-decorator';
 
 @Component({})
 export default class Label extends Vue {
-    @Prop() title: String;
+    @Prop() title: string;
 }
 </script>
 <style lang="scss" scoped>
@@ -19,4 +19,3 @@ export default class Label extends Vue {
    color: #333333;
 }
 </style>
-

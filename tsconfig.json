@@ -5,12 +5,30 @@
       "allowSyntheticDefaultImports": true,
       "experimentalDecorators": true,
       "sourceMap": true,
-      "module": "es2015",
+      "module": "ESNext",
       "moduleResolution": "node",
-      "target": "es5"
+      "target": "ES2016",
+      "lib": [
+        "es2017",
+        "es2015",
+        "es2015.promise",
+        "dom",
+      ],
+      "typeRoots": [
+        "./node_modules/@types",
+        "./types"
+      ],
+      "baseUrl": ".",
+      "paths": {
+        "vue": ["node_modules/vue/types"],
+        "@/*": ["src/*"],
+      }
     },
+    "include": [
+      "src/**/*"
+    ],
     "exclude": [
         "node_modules",
         "compile",
-    ]
+    ],
 }
