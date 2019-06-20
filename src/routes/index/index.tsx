@@ -3,6 +3,7 @@ import { namespace } from 'vuex-class';
 import { Component } from 'vue-property-decorator';
 import CommonTitle from '@/components/CommonTitle/index.vue';
 import { Me as GlobalMe } from '@/store/modules/global';
+import { queryList } from '@/api/service';
 import '@/assets/style/index.scss';
 import './index.scss';
 
@@ -20,7 +21,15 @@ export default class Index extends Vue {
     title: string = '首页';
     msg: string = 'hello world';
     mounted() {
+        this.queryList();
         console.log(this.me.name);
+    }
+    async queryList() {
+        await queryList().then(res => {
+            console.log('res', res);
+        }).catch(err => {
+            console.log('err', err);
+        });
     }
     routerPushTest() {
         this.$router.push({ path: 'test', query: { name: 'axuebin' } });
