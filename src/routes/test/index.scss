@@ -1,4 +1,4 @@
-.index {
+.test {
     width: 375px;
     display: flex;
     flex-direction: column;
@@ -21,5 +21,11 @@
         background-color: #FF5151;
         color: #FFFFFF;
         border-radius: 4px;
+    }
+    .vuex-test {
+        .count {
+            margin-top: 12px;
+            font-size: 16px;
+        }
     }
 }
