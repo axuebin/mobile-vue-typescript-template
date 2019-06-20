@@ -15,7 +15,7 @@ export default class Label extends Vue {
 <style lang="scss" scoped>
 .common-title {
    text-align: center;
-   font-size: 24px;
+   font-size: 24px; /*!px*/
    color: #333333;
 }
 </style>

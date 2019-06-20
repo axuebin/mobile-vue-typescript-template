@@ -11,8 +11,15 @@ const resolve = p => path.resolve(__dirname, p);
 
 function styleLoaders(lang) {
     const loaders = [{
-        loader: 'css-loader',
-    }];
+        loader: 'css-loader'
+    }, {
+        loader: 'postcss-loader',
+        options: {
+            config: {
+                path: resolve('postcss.config.js'),
+            },
+        },
+    }]
     if (lang === 'scss') {
         loaders.push({
             loader: 'sass-loader',
@@ -67,7 +74,7 @@ module.exports = {
                 preset: ['default', { discardComments: { removeAll: true } }],
             },
             canPrint: true,
-        }),
+        })
     ],
     module: {
         rules: [
