@@ -1,0 +1,25 @@
+.index {
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #FFFFFF;
+    .msg {
+        margin-top: 12px;
+        font-size: 14px;
+        color: #FF5151;
+    }
+    .btn {
+        margin-top: 12px;
+        padding: 0 12px;
+        height: 30px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 30px;
+        background-color: #FF5151;
+        color: #FFFFFF;
+        border-radius: 4px;
+    }
+}
