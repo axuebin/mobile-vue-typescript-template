@@ -22,4 +22,21 @@
         color: #FFFFFF;
         border-radius: 4px;
     }
+    .vuex-test {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        .count {
+            font-size: 16px;
+        }
+        &-btn {
+            padding: 0 12px;
+            height: 30px;
+            margin-left: 24px;
+            border: 1px solid #E5E5E5; /*!no*/
+            border-radius: 4px;
+            text-align: center;
+            line-height: 30px;
+        }
+    }
 }

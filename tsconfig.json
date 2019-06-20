@@ -4,6 +4,7 @@
       "jsxFactory": "h",
       "allowSyntheticDefaultImports": true,
       "experimentalDecorators": true,
+      "strictFunctionTypes": false,
       "sourceMap": true,
       "module": "ESNext",
       "moduleResolution": "node",
