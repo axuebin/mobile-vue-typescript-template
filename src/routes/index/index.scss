@@ -46,4 +46,13 @@
             line-height: 30px;
         }
     }
+    .list {
+        margin-top: 12px;
+        &-item {
+            margin-top: 6px;
+            & > span {
+                margin-left: 12px;
+            }
+        }
+    }
 }

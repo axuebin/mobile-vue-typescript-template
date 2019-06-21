@@ -10,6 +10,12 @@ import './index.scss';
 
 const globalModule = namespace('global');
 
+interface ListItem {
+    id: number;
+    name: string;
+    user: string;
+}
+
 @Component({
     components: {
         CommonTitle,
@@ -21,13 +27,16 @@ export default class Index extends Vue {
     @globalModule.Action('increment') onIncrement: Function;
     title: string = '首页';
     msg: string = 'hello world';
+    list: ListItem[] = [];
     mounted() {
         this.queryList();
         console.log(this.me.name);
     }
     async queryList() {
         await queryList().then(res => {
-            console.log('res', res);
+            if (res.success === 0) {
+                this.list = res.data;
+            }
         }).catch(err => {
             console.log('err', err);
         });
@@ -39,7 +48,7 @@ export default class Index extends Vue {
         this.onIncrement();
     }
     render() {
-        const { title, msg, count } = this;
+        const { title, msg, count, list } = this;
         return <div class="index">
             <common-title title={title}></common-title>
             <p class="msg"><img class="time-img" src={timeImg}/>{msg}</p>
@@ -48,6 +57,19 @@ export default class Index extends Vue {
                 <p class="count">count: {count}</p>
                 <div class="vuex-test-btn" onClick={this.onClickCountIncrement}>count +</div>
             </div>
+            {
+                list.length > 0
+                    ? <div class="list">
+                        {
+                            list.map(item => <div class="list-item">
+                                <span>{item.id}</span>
+                                <span>{item.name}</span>
+                                <span>{item.user}</span>
+                            </div>)
+                        }
+                    </div>
+                    : ''
+            }
         </div>;
     }
 }
