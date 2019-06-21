@@ -80,10 +80,47 @@ module.exports = {
         rules: [
             { test: /\.vue$/, loader: 'vue-loader' },
             { test: /\.js$/, loader: 'babel-loader' },
-            { test: /\.ts$/, use: [{ loader: 'babel-loader' }, { loader: 'ts-loader', options: { appendTsSuffixTo: ['\\.vue$'] } }] },
-            { test: /\.tsx$/, exclude: /node_modules/, enforce: 'pre', use: ['babel-loader', { loader: 'ts-loader', options: { appendTsSuffixTo: ['\\.vue$'] } }] },
+            { 
+                test: /\.ts$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                    },
+                    { 
+                        loader: 'ts-loader',
+                        options: {
+                            appendTsSuffixTo: ['\\.vue$'],
+                        },
+                    },
+                ],
+            },
+            { 
+                test: /\.tsx$/,
+                exclude: /node_modules/,
+                enforce: 'pre',
+                use: [
+                    'babel-loader',
+                    { 
+                        loader: 'ts-loader',
+                        options: {
+                            appendTsSuffixTo: ['\\.vue$'],
+                        },
+                    },
+                ],
+            },
             { test: /\.css$/, use: styleLoaders() },
-            { test: /\.scss$/, use: styleLoaders('scss') }
+            { test: /\.scss$/, use: styleLoaders('scss') },
+            {
+                test: /\.(png|jpg|jpeg)$/,
+                include: path.resolve(__dirname, '../src'),
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: { limit: 20240 },
+                    },
+                    { loader: 'img-loader' },
+                ],
+            },
         ],
     },
     optimization: {

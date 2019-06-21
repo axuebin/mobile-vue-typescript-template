@@ -4,6 +4,7 @@ import { Component } from 'vue-property-decorator';
 import CommonTitle from '@/components/CommonTitle/index.vue';
 import { Me as GlobalMe } from '@/store/modules/global';
 import { queryList } from '@/api/service';
+import timeImg from '@/assets/img/time.png';
 import '@/assets/style/index.scss';
 import './index.scss';
 
@@ -41,7 +42,7 @@ export default class Index extends Vue {
         const { title, msg, count } = this;
         return <div class="index">
             <common-title title={title}></common-title>
-            <p class="msg">{msg}</p>
+            <p class="msg"><img class="time-img" src={timeImg}/>{msg}</p>
             <div class="btn" onClick={this.routerPushTest}>路由跳转测试页面</div>
             <div class="vuex-test">
                 <p class="count">count: {count}</p>
