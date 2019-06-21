@@ -59,9 +59,11 @@ npm run build
 │   │   ├── index.ts
 │   │   └── modules // 分 module 管理 store
 │   │       └── global.ts // 全局 store
-│   └── types // 库定义
-│       ├── index.d.ts
-│       └── vue.d.ts
+│   ├── types // 库定义
+│   │   ├── index.d.ts
+│   │   └── vue.d.ts
+│   └── mock // 本地接口 mock 文件
+│       ├── index.ts
 ├── package-lock.json
 ├── package.json
 ├── postcss.config.js // postcss 配置文件
