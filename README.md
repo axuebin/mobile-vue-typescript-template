@@ -25,6 +25,7 @@ npm run build
 
 ## 项目结构
 
+```
 ├── compile // webpack 配置文件
 │   ├── webpack.common.js
 │   ├── webpack.dev.js
@@ -66,3 +67,4 @@ npm run build
 ├── postcss.config.js // postcss 配置文件
 ├── tsconfig.json // ts 配置文件
 └── README.md
+```
