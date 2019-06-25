@@ -79,7 +79,14 @@ module.exports = {
     module: {
         rules: [
             { test: /\.vue$/, loader: 'vue-loader' },
-            { test: /\.js$/, loader: 'babel-loader' },
+            { 
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    cacheDirectory: true,
+                },
+            },
             { 
                 test: /\.ts$/,
                 use: [
@@ -124,15 +131,8 @@ module.exports = {
         ],
     },
     optimization: {
-        minimize: env === 'production' ? true : false,
         splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: "vendor",
-                    chunks: "all",
-                },
-            },
+            chunks: "all",
         },
     },
 };

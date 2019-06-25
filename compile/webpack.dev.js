@@ -21,11 +21,4 @@ module.exports = merge(common, {
             enforce: 'pre',
         }],
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"development"',
-            },
-        })
-    ],
 });
